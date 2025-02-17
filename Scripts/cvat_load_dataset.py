@@ -98,7 +98,7 @@ if __name__ == "__main__":
     dataset.persistent = True
 
     # Launch the FiftyOne App
-    session = fo.launch_app(dataset)
+    session = fo.launch_app(dataset, address="0.0.0.0")
 
     # Run the annotation editor
     dataset.annotate(

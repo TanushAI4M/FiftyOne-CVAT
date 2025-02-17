@@ -120,7 +120,7 @@ if __name__ == "__main__":
     original_filepaths = {s.filepath for s in dataset}
 
     # Launch the FiftyOne App
-    session = fo.launch_app(dataset)
+    session = fo.launch_app(dataset, address="0.0.0.0")
 
     try:
         session.wait()  # Wait for user interaction

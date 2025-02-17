@@ -22,5 +22,5 @@ if __name__ == "__main__":
     # dataset.load_annotation_view(args.anno_key)
 
     # Launch FiftyOne App
-    session = fo.launch_app(dataset)
+    session = fo.launch_app(dataset, address="0.0.0.0")
     session.wait()

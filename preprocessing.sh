@@ -51,7 +51,7 @@ if [ "$choice" -eq 5 ]; then
 fi
 
 # Prompt for dataset directory
-read -p "Enter dataset directory: " dataset_dir
+read -p "Enter dataset directory (Provide Absolute Path): " dataset_dir
 
 # Choose dataset type from available options
 echo "Choose dataset type from the following options:"
