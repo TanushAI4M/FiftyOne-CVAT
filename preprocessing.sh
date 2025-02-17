@@ -55,11 +55,11 @@ read -p "Enter dataset directory: " dataset_dir
 
 # Choose dataset type from available options
 echo "Choose dataset type from the following options:"
-echo "1. ImageDirectory"
-echo "2. VideoDirectory"
-echo "3. ImageDirectoryTree"
-echo "4. VideoDirectoryTree"
-echo "5. yoloDataset"
+echo "1. ImageDirectory - Use When all images are in the Directory mentioned above"
+echo "2. VideoDirectory - Use When all videos are in the Directory mentioned above"
+echo "3. ImageDirectoryTree - Use when images are in subfolders in the Directory Mentioned above"
+echo "4. VideoDirectoryTree  - Use when videos are in subfolders in the Directory Mentioned above"
+# echo "5. yoloDataset - To Import Yolov5 Dataset to FiftyOne"
 read -p "Enter your choice (1-5): " dataset_type_choice
 
 case $dataset_type_choice in
