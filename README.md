@@ -34,6 +34,12 @@ Depending on your task, execute the appropriate script:
 ```bash
 ./cvat.sh
 ```
+### 4. Open FiftyOne on Your System
+To access FiftyOne, copy and paste the following link into your browser:
+
+```bash
+http://100.64.84.30:5151
+```
 
 ---
 
@@ -53,6 +59,11 @@ Locates and displays completely identical images within the dataset.
 
 ### 5. **Delete Dataset**
 Removes a dataset from FiftyOne's memory.
+<br>
+Use this if you encounter the following error:
+```bash
+ValueError: Dataset name <name> is not available
+```
 
 ---
 
