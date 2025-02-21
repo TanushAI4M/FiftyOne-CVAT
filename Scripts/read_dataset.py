@@ -11,13 +11,14 @@ from delete_images import track_deleted_images
 def load_dataset(dataset_dir, name, dataset_type):
     if not os.path.exists(dataset_dir):
         raise FileNotFoundError(f'Path "{dataset_dir}" does not exist')
-
+    
     dataset_types = {
         "ImageDirectory": fo.types.ImageDirectory,
         "VideoDirectory": fo.types.VideoDirectory,
         "ImageDirectoryTree": fo.types.ImageClassificationDirectoryTree,
         "VideoDirectoryTree": fo.types.VideoClassificationDirectoryTree,
-        "yoloDataset": fo.types.YOLOv5Dataset,
+        "CocoDataset": fo.types.COCODetectionDataset,
+        #"yoloDataset": fo.types.YOLOv5Dataset,
     }
 
     if dataset_type not in dataset_types:

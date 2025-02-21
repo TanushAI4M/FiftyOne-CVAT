@@ -59,7 +59,7 @@ echo "1. ImageDirectory - Use When all images are in the Directory mentioned abo
 echo "2. VideoDirectory - Use When all videos are in the Directory mentioned above"
 echo "3. ImageDirectoryTree - Use when images are in subfolders in the Directory Mentioned above"
 echo "4. VideoDirectoryTree  - Use when videos are in subfolders in the Directory Mentioned above"
-# echo "5. yoloDataset - To Import Yolov5 Dataset to FiftyOne"
+echo "5. CocoDataset - To Import COCO Dataset to FiftyOne"
 read -p "Enter your choice (1-5): " dataset_type_choice
 
 case $dataset_type_choice in
@@ -67,7 +67,7 @@ case $dataset_type_choice in
     2) dataset_type="VideoDirectory" ;;
     3) dataset_type="ImageDirectoryTree" ;;
     4) dataset_type="VideoDirectoryTree" ;;
-    5) dataset_type="yoloDataset" ;;
+    5) dataset_type="CocoDataset" ;;
     *)
         echo "Invalid choice. Exiting..."
         exit 1
