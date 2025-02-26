@@ -17,29 +17,38 @@ def load_dataset(dataset_dir, name, dataset_type):
         "VideoDirectory": fo.types.VideoDirectory,
         "ImageDirectoryTree": fo.types.ImageClassificationDirectoryTree,
         "VideoDirectoryTree": fo.types.VideoClassificationDirectoryTree,
-        "CocoDataset": fo.types.COCODetectionDataset,
-        #"yoloDataset": fo.types.YOLOv5Dataset,
+        "CocoDataset": fo.types.COCODetectionDataset(),
+        #"yoloDataset": fo.types.YOLOv5Dataset
     }
 
     if dataset_type not in dataset_types:
         raise ValueError(f'Invalid dataset_type "{dataset_type}". Choose from {list(dataset_types.keys())}.')
 
-    dataset = fo.Dataset.from_dir(
+    if dataset_type=="CocoDataset":
+        dataset = fo.Dataset.from_dir(
+            data_path=dataset_dir,
+            dataset_type=dataset_types[dataset_type],
+            labels_path=f"{dataset_dir}/_annotations.coco.json",
+            name=name
+        )
+
+    else:    
+        dataset = fo.Dataset.from_dir(
         dataset_dir=dataset_dir,
         dataset_type=dataset_types[dataset_type],
         name=name
-    )
+        )
 
     dataset.compute_metadata()
     return dataset
-
+                                                                     
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Load a FiftyOne dataset from a directory.")
     parser.add_argument("--name", type=str, required=True, help="Name of the dataset")
     parser.add_argument("--dataset_dir", type=str, required=True, help="Path to the dataset directory")
     parser.add_argument(
         "--dataset_type", type=str, default="ImageDirectory", 
-        choices=["ImageDirectory", "VideoDirectory", "ImageDirectoryTree", "VideoDirectoryTree", "yoloDataset"], 
+        choices=["ImageDirectory", "VideoDirectory", "ImageDirectoryTree", "VideoDirectoryTree", "yoloDataset", "CocoDataset"], 
         help="Type of the dataset (default: ImageDirectory)"
     )
     parser.add_argument(
