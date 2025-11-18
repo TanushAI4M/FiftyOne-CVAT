@@ -19,7 +19,7 @@ podman run -it --rm --net=host --ipc=host -v /home/ai4m/:/home/ai4m docker.io/vo
 ### 3. Navigate to the FiftyOne Folder
 Move to the directory where FiftyOne files are stored:
 ```bash
-cd /home/ai4m/fiftyone/
+cd /home/ai4m/FiftyOne-CVAT/
 ```
 
 ### 4. Run Required Scripts
