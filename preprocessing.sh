@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /home/tanush-jadhav/Desktop/Voxel_51/Scripts || { echo "Directory not found!"; exit 1; }
+cd ./Scripts || { echo "Directory not found!"; exit 1; }
 
 # Function to view dataset
 view_dataset() {
